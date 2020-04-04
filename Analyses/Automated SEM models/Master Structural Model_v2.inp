@@ -1,0 +1,110 @@
+
+
+[[init]]
+iterators =	outcome;
+outcome = 1:28;
+
+outcomeNames#outcome = 
+Buy MoneyCons FinWB ExerciseReport Fat DietSingle BMI Hyg SexRisk Sleep 
+TV GamePathScore PhoneTime PhonePath Lifesat Meaning LeisureToT2 DepTot 
+AnxTot AggTot DietDys RelatSat RelatAccNoLoy SchoolEng SchoolStrat 
+SchoolGPA ACTTot WorkPresTot;
+
+filename = "[[outcomeNames#outcome]].inp";
+outputDirectory = Output;
+[[/init]]
+
+    Title: [[outcomeNames#outcome]];
+
+    DATA: 	
+      File = "C:\Users\Curt\Desktop\Mplus\AllData_MplusAutoReady.txt";
+
+    VARIABLE:
+        NAMES =
+        Sex
+        SES
+        RavenScore
+        SocDes
+        UPPS
+        NEOCon
+        BriefSC
+        Inhibition
+        Stop
+        Anti
+        Stroop
+        NoGo
+        Simon
+        Buy
+        MoneyCons
+        FinWB
+        ExerciseReport
+        Fat
+        DietSingle
+        BMI
+        Hyg
+        SexRisk
+        Sleep
+        TV
+        GamePathScore
+        PhoneTime
+        PhonePath
+        Lifesat
+        Meaning
+        LeisureTot2
+        DepTot
+        AnxTot
+        AggTot
+        DietDys
+        RelatSat
+        RelatAccNoLoy
+        SchoolEng
+        SchoolStrat
+        SchoolGPA
+        ACTTot
+        WorkPresTot;
+
+        USEVARIABLES = Sex SES RavenScore SocDes Stop Anti Stroop NoGo Simon UPPS NEOCon 
+                       BriefSC [[outcomeNames#outcome]];
+
+        !CATEGORICAL ARE Sex;
+
+        MISSING = .;
+
+        !AUXILIARY = Subject;
+
+    
+    ANALYSIS:
+        TYPE = GENERAL;
+        ESTIMATOR = MLR;
+        ITERATIONS = 1000000;
+        !MODEL = NOCOVARIANCES;
+
+    OUTPUT:
+    samp stand tech1 tech4 STDYX  CINT
+
+    MODEL:
+    ! Inhibition measurement model
+    inhib by Anti;
+    inhib by Stop;
+    inhib by Stroop;
+    inhib by NoGo;
+    inhib by Simon;
+
+    ! Self-control measurement model
+    selfcontrol by UPPS;
+    selfcontrol by NEOCon;
+    selfcontrol by BriefSC;
+
+    ! Regress outome on variables;
+    ! Covariates
+    [[outcomeNames#outcome]] on Sex;
+    [[outcomeNames#outcome]] on SES;
+    [[outcomeNames#outcome]] on RavenScore;
+    [[outcomeNames#outcome]] on SocDes;
+    ! Factors
+    [[outcomeNames#outcome]] on inhib;
+    [[outcomeNames#outcome]] on selfcontrol;
+
+    ! If want to test correlation between f1 and f2;
+    inhib with selfcontrol;
+

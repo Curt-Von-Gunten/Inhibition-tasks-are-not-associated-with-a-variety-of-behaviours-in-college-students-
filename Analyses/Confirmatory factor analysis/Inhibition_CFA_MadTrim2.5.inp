@@ -1,0 +1,40 @@
+    Title: Inhibition Latent Factor;
+
+    DATA: 	
+      File = "C:\Users\Curt\Desktop\Mplus\Merged_MadTrim2.5.txt";
+
+    VARIABLE:
+
+        NAMES = Subject Stop Anti NoGo Stroop Simon ;
+
+        USEVARIABLES = Stop Anti NoGo Stroop Simon ;
+
+        MISSING = ALL (-999);
+
+        AUXILIARY = Subject;
+
+    MODEL:
+          !!LATENT INIHBITION
+              Inhibition BY  Stop@1 Anti NoGo Stroop Simon ;
+![Inhibition@0];
+
+!Inhibition@1;
+
+!Inhibition by
+!Anti
+!NoGo
+!Simon
+!Stroop
+!Stop;
+
+    ANALYSIS:
+        TYPE = GENERAL;
+        ESTIMATOR = MLR;
+        !ITERATIONS = 1000000;
+        MODEL = NOCOVARIANCES;
+
+    SAVEDATA: File = LatentScores_MadTrim2.0.txt;
+          SAVE = fscores;
+
+
+    OUTPUT: TECH1 TECH4 MODINDICES CINTERVAL SAMPSTAT SVALUES STANDARDIZED;
