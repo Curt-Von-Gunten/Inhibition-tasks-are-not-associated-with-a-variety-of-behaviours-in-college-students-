@@ -10,3 +10,5 @@ Note that the following inhbition task raw files are not here because they were 
 Simon_Both.csv
 Stroop_Both.csv
 Go_NoGo_Both.csv
+
+Journal article: https://onlinelibrary.wiley.com/doi/abs/10.1002/per.2250
