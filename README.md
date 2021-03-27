@@ -1,6 +1,7 @@
 # Inhibition-tasks-are-not-associated-with-a-variety-of-behaviours-in-college-students
 
-This repository contains the data and coding scripts used for the paper, 'Inhibition tasks are note associated with a variety of behaviours in college students'.
+This repository contains the data and coding scripts used for the paper, 'Inhibition tasks are note associated with a variety of behaviours in college students'. 
+Journal article: https://onlinelibrary.wiley.com/doi/abs/10.1002/per.2250
 
 The processing pipeline for this project was fairley complex and for better or worse it used a mix of Python, R, Mplus, and SAS.
 
@@ -11,4 +12,6 @@ Simon_Both.csv
 Stroop_Both.csv
 Go_NoGo_Both.csv
 
-Journal article: https://onlinelibrary.wiley.com/doi/abs/10.1002/per.2250
+![image](https://user-images.githubusercontent.com/16738116/112729705-eaafdd80-8f03-11eb-9fa1-a971d6b9696f.png)
+
+
