@@ -14,4 +14,4 @@ Go_NoGo_Both.csv
 
 ![image](https://user-images.githubusercontent.com/16738116/112729722-fe5b4400-8f03-11eb-9a75-556560e95bdb.png)
 
-![image](https://user-images.githubusercontent.com/16738116/112730378-a0c8f680-8f07-11eb-9ccf-48565f240a2c.png)
+![image](https://user-images.githubusercontent.com/16738116/112730400-b3433000-8f07-11eb-95f3-26790a5dea5c.png)
